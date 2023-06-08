@@ -102,3 +102,34 @@ const mergeSort = (arr) => {
       buffer[i++] = sorted[right++];
     }
   }
+//Quick SORT
+const arraysColllection = [];
+  function quickSort (arr,low,high){
+   
+    if(low<high){
+    
+      p = partiton(arr,low,high);
+  
+      quickSort(arr,low,p-1);
+      quickSort(arr,p+1,high);
+    }
+    return arraysColllection;
+  }
+  
+  function partiton(arr,low,high){
+    let pivot = arr[high];
+    
+    let i = low-1;
+    
+    for(let j = low;j<high;j++){
+      if(arr[j]<=pivot){
+        i++;
+        [arr[i],arr[j]] = [arr[j],arr[i]]
+        arraysColllection.push([...arr])
+      }
+    }
+    [arr[i+1],arr[high]] = [arr[high],arr[i+1]];
+    arraysColllection.push([...arr])
+    
+    return i+1;
+  }

@@ -4,6 +4,7 @@ const bubbleSortBtn = document.getElementById("bubtleSortBtn")
 const insertionSortBtn = document.getElementById("insertionSortBtn");
 const selectionSortBtn = document.getElementById("selectionSortBtn");
 const mergeSortBtn = document.getElementById("mergeSortBtn");
+const quickSortBtn = document.getElementById("quickSortBtn");
 const sizeBtn = document.getElementById('size'); 
 const resetBtn = document.getElementById("resetBtn");
 
@@ -50,7 +51,6 @@ insertionSortBtn.addEventListener('click',()=>{
         },100*i)
     }
 })
-
 selectionSortBtn.addEventListener("click",()=>{
     const arraysColllection = selectionSort(randomArray);
 
@@ -67,5 +67,13 @@ mergeSortBtn.addEventListener("click",()=>{
         setTimeout(()=>{
             makeChart(arraysColllection[i],ctx,canvas.width,canvas.height,w)
         },800*i)
+    }
+})
+quickSortBtn.addEventListener("click",()=>{
+    const arraysColllection = quickSort(randomArray,0,randomArray.length-1);
+    for(let i = 0;i<arraysColllection.length;i++){
+        setTimeout(()=>{
+            makeChart(arraysColllection[i],ctx,canvas.width,canvas.height,w)
+        },100*i)
     }
 })
